@@ -13,14 +13,16 @@ M569 P4 S0                                 ; Drive 4 goes forwards (E1)
 
 M574 X2 Y2 Z2 S1                           ; set endstop configuration (all endstops at high end, active high)
 
-M665 R144 L291.06 B135 H400 X0 Y0 Z0       ; delta radius, diagonal rod length, printable radius and homed height
-;M665 R144 L337 B135 H350 X0 Y0 Z0         ; optional carbon fiber arms length setting
+;M665 R144 L291.06 B135 H400 X0 Y0 Z0       ; delta radius, diagonal rod length, printable radius and homed height v3 arms
+M665 R144 L337 B135 H350 X0 Y0 Z0          ; upgraded carbon fiber arms length setting
                                            ; Y X Z are tower angle offsets
 M666 X0 Y0 Z0                              ; endstop offsets in mm
 
 M350 X16 Y16 Z16 E16:16 I1                 ; Set 16x microstepping w/ Interpolation
-M92 X200 Y200 Z200                         ; Set axis steps/mm
-M92 E182.0:182.0                           ; Set extruder steps/mm
+;M92 X200 Y200 Z200                         ; Set axis steps/mm for .9 motor with 16T pulley
+M92 X80 Y80 Z80								             ; Set axis steps/mm for 1.8 motor with 20T pulley (org v3 config)
+;M92 E182.0:182.0                           ; Set extruder steps/mm for .9 motor for EZR Extruder
+M92 E91.0:91.0								             ; set extruder steps/mm for 1.8 motor for EXR Extruder (org v3 config)
 
 M906 X1200 Y1200 Z1200 E1200:1200 I50      ; Set motor currents (mA) and idle current %
 M201 X4200 Y4200 Z4200 E5000               ; Accelerations (mm/s^2)
@@ -39,12 +41,12 @@ M563 P0 D0 H1                              ; Hot end (T0), drive (E0), heater (H
 G10 P0 S0 R0                               ; Hot end operating and standby temperatures
 
 ;Dual Extrusion Code 
-;M563 P1 D1 H1                              ; Hot end (T1), drive (E1), heater (H1)
-;G10 P1 S0 R0                               ; Hot end (1) operating and standby temperatures
+M563 P1 D1 H1                              ; Hot end (T1), drive (E1), heater (H1)
+G10 P1 S0 R0                               ; Hot end (1) operating and standby temperatures
 
 M558 P5 I0 A2 S0.05 R0.4 H20 F2500         ; Strain gauge probe settings
 G31 P100 X0 Y0 Z-0.3                       ; Probe trigger and offset values
-M557 R140 S30                              ; defualt bed mapping
+M557 R140 S20                              ; default bed mapping
 M501                                       ; Load saved config values
 T0                                         ; Select Tool 0
 M375									   ; Load height map
