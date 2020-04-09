@@ -1,5 +1,5 @@
 G28
-M117 Bed Mapping RostockMAX v4
+M117 Bed Mapping RostockMAX v3.2
 M558 P5 I0 A1 S0.05 R0.4 H20 F2500 
 M104 S0
 M140 S0
