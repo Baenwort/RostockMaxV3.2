@@ -1,5 +1,5 @@
 M291 P"FIRST PROBE PRINTER SETUP: Did you delete heightmap.csv and config-override.g?  Continue Click OK" R"SETUP PRINTER" S3
-M117 Begin RostockMAX v4 Initial Calibration
+M117 Begin RostockMAX v3.2 Initial Calibration
 M117 Heating Bed Please Wait
 M190 S70
 M104 S0
@@ -18,6 +18,6 @@ M500
 G28
 M84
 M375
-M117 End RostockMAX v4 Initial Calibration
+M117 End RostockMAX v3.2 Initial Calibration
 
 
