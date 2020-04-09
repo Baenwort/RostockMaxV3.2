@@ -1,4 +1,4 @@
-M117 RostockMAX v4 Begin Auto Calibration
+M117 RostockMAX v3.2 Begin Auto Calibration
 M117 Heating Bed Please Wait
 M190 S70
 M104 S0
@@ -9,5 +9,5 @@ M500
 G28
 M84
 M375
-M117 RostockMAX v4 Auto Calibration Complete
+M117 RostockMAX v3.2 Auto Calibration Complete
 
